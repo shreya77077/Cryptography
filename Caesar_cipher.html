@@ -1,0 +1,11 @@
+// A JavaScript Program to illustrate Caesar Cipher Technique // Encrypts text
+using a shift on s function encrypt(text, shift) { let result = ""; for (let i =
+0; i < text.length; i++) { let char = text[i]; if (char.match(/[a-z]/i)) { let
+isUpperCase = char === char.toUpperCase(); let code = char.charCodeAt(0); let
+base = isUpperCase ? 65 : 97; let encryptedChar = String.fromCharCode((code -
+base + shift) % 26 + base); result += isUpperCase ? encryptedChar :
+encryptedChar.toLowerCase(); } else { result += char; } } return result; } let
+originalText = "ATTACKATONCE"; let shiftAmount = 4; let encryptedText =
+encrypt(originalText, shiftAmount); console.log("Original Text: " +
+originalText); console.log("Shift Amount: " + shiftAmount);
+console.log("Encrypted Text: " + encryptedText);
